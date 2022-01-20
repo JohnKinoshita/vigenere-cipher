@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple Vigenere Cipher tool." />
+    <title>Vigenère Cipher</title>
+    <link rel="stylesheet" href="./src/main.css" />
+  </head>
+  <body class="bg-brown text-white font-inter selection:bg-orange">
+    <main
+      class="mx-auto pt-4 pb-8 md:py-8 px-3 md:w-5/6 lg:w-8/12 xl:w-7/12 2xl:w-5/12"
+    >
+      <div class="pt-6 pb-4 md:pt-14">
+        <h1
+          class="text-orange font-bold text-4xl pb-4 md:text-5xl lg:text-6xl selection:bg-white"
+        >
+          Vigenère Cipher
+        </h1>
+        <p class="text-left">
+          This is a simple
+          <a
+            href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher"
+            class="font-semibold selection:bg-white"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Vigenère cipher</a
+          >
+          tool that will encrypt or decrypt alphabetic characters using a
+          repeating keyword.
+        </p>
+      </div>
+      <form
+        id="form"
+        class="bg-lightbr p-2 md:p-5 border-2 rounded-xl border-lightbr"
+      >
+        <label for="inputMessage" class="p-2 text-lg text-left block pb-1"
+          >Message:</label
+        >
+        <textarea
+          id="inputMessage"
+          class="pl-2 h-20 w-full resize-none text-black bg-lighttan rounded-md focus:bg-xlighttan focus:outline-none block focus:ring-1 placeholder:text-tan"
+          wrap="soft"
+          placeholder="ex. Be sure to drink your Ovaltine"
+        ></textarea>
+        <small class="pl-2"></small>
+        <label
+          for="inputKey"
+          class="p-2 text-lg text-left block pt-2 pb-1 hover:outline-orange"
+          >Key:</label
+        >
+        <div class="flex justify-between relative">
+          <input
+            id="inputKey"
+            class="p-2 w-full text-black bg-lighttan rounded-md border-1 focus:bg-xlighttan focus:outline-none block focus:ring-1 placeholder:text-tan"
+            maxlength="15"
+            placeholder="ex. ROUNDTINE"
+          />
+          <button
+            id="randomKeyGenBtn"
+            class="border-2 px-3 py-2 ml-2 rounded-md border-orange font-semibold text-orange whitespace-nowrap hover:border-darkorg hover:text-darkorg active:translate-y-1"
+            type="button"
+          >
+            Random Key
+          </button>
+          <small class="pl-2 absolute top-12"></small>
+        </div>
+        <div class="flex justify-around items-center pt-7 pb-2">
+          <button
+            id="encryptBtn"
+            class="flex items-center bg-orange text-white font-semibold px-3 py-2 rounded-md border-none hover:bg-darkorg active:translate-y-1"
+            type="submit"
+          >
+            <img
+              class="pr-1 w-6 h-6"
+              src="./images/lock.svg"
+              alt="encrypt"
+            />Encrypt
+          </button>
+          <button
+            id="decryptBtn"
+            class="flex items-center bg-orange text-white font-semibold px-3 py-2 rounded-md border-none hover:bg-darkorg active:translate-y-1 hover:"
+            type="submit"
+          >
+            <img
+              class="pr-1 w-6 h-6"
+              src="./images/unlocked.svg"
+              alt="decrypt"
+            />Decrypt
+          </button>
+        </div>
+      </form>
+      <label
+        for="results"
+        class="p-2 text-lg text-left block pt-5 md:pt-20 pb-1"
+        >Results:</label
+      >
+      <textarea
+        id="results"
+        name="results"
+        class="bg-tan p-2 h-32 w-full resize-y text-black rounded-md border-1 focus:outline-none placeholder:text-lightbr"
+        placeholder="ex. SS MHUX BB HIWHX BHCE SMOFGLGM"
+        readonly
+      ></textarea>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      const myText = document.getElementById("inputMessage");
+      myText.style.cssText = `height: ${myText.scrollHeight}px; overflow-y:hidden`;
+
+      myText.addEventListener("input", function () {
+        this.style.height = "auto";
+        this.style.height = `${this.scrollHeight}px`;
+      });
+    </script>
+  </body>
+</html>

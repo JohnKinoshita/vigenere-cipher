@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  color: #fa7d09;
+}
+
+a:hover {
+  color: #ff4301;
+}
+
+small {
+  color: red;
+  visibility: visible;
+}
