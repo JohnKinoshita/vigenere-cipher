@@ -8,11 +8,16 @@
     <title>Vigenère Cipher</title>
     <link rel="stylesheet" href="./src/main.css" />
   </head>
-  <body class="bg-brown text-white font-inter selection:bg-orange">
+  <body class="bg-brown text-white font-inter selection:bg-orange h-screen">
+    <header class="flex justify-end">
+      <div class="p-3">
+        <a href="https://github.com/JohnKinoshita/vigenere-cipher">Github</a>
+      </div>
+    </header>
     <main
-      class="mx-auto pt-4 pb-8 md:py-8 px-3 md:w-5/6 lg:w-8/12 xl:w-7/12 2xl:w-5/12"
+      class="mx-auto pb-8 md:py-4 px-3 md:w-5/6 lg:w-8/12 xl:w-7/12 2xl:w-5/12"
     >
-      <div class="pt-6 pb-4 md:pt-14">
+      <div class="pt-4 pb-4 md:pt-14">
         <h1
           class="text-orange font-bold text-4xl pb-4 md:text-5xl lg:text-6xl selection:bg-white"
         >
@@ -104,7 +109,6 @@
         readonly
       ></textarea>
     </main>
-    <footer></footer>
     <script type="module" src="/src/main.ts"></script>
     <script>
       const myText = document.getElementById("inputMessage");
