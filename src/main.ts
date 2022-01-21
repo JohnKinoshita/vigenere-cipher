@@ -102,9 +102,10 @@ form.addEventListener("submit", (e) => {
     setErrorFor(inputKey, "Key cannont be blank");
   } else if (!isAlpha(inputKey.value)) {
     setErrorFor(inputKey, "Key must only use alphabetical characters");
+  } else if (e.submitter!.outerHTML.includes("encryptBtn")) {
+    encryptMessage();
   } else {
-    encryptBtn.onclick = encryptMessage;
-    decryptBtn.onclick = decryptMessage;
+    decryptMessage();
   }
 });
 
