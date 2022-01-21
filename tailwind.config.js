@@ -12,7 +12,7 @@ module.exports = {
         tan: "#857566",
       },
       fontFamily: {
-        inter: ["'Inter'", "sans-serif"],
+        arial: ["'Arial'", "sans-serif"],
       },
     },
   },
