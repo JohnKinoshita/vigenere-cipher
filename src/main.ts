@@ -7,8 +7,6 @@ const inputMessage = document.getElementById(
 ) as HTMLTextAreaElement;
 let inputKey = document.getElementById("inputKey") as HTMLInputElement;
 const results = document.getElementById("results") as HTMLTextAreaElement;
-const encryptBtn = document.getElementById("encryptBtn") as HTMLButtonElement;
-const decryptBtn = document.getElementById("decryptBtn") as HTMLButtonElement;
 const randomKeyGenBtn = document.getElementById(
   "randomKeyGenBtn"
 ) as HTMLButtonElement;
